@@ -14,6 +14,9 @@
 [url "git@github.com:"]
     insteadOf = https://github.com/
 
+[core]
+    editor = nano
+
 [alias]
     co = checkout
     br = branch
