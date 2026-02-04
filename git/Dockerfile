@@ -20,6 +20,7 @@ RUN mkdir -p /home/git/.ssh \
 
 COPY ssh_config /home/git/.ssh/config
 COPY entrypoint.sh /entrypoint.sh
+COPY .bash_aliases /home/git/.bash_aliases
 
 RUN chmod 600 /home/git/.ssh/config \
  && chown -R git:git /home/git/.ssh \

@@ -1,0 +1,10 @@
+# Custom Aliases
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log'
+alias ll='ls -la'
+alias l='ls -l'
+alias ..='cd ..'
+alias ...='cd ../..'
