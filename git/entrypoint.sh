@@ -20,7 +20,6 @@ chown -R git:git "$SSH_DIR"
 # Add GitHub to known_hosts (to prevent first-time connection issues)
 if ! ssh-keygen -F github.com > /dev/null 2>&1; then
   echo "[*] Adding GitHub to known_hosts..."
-  mkdir -p /home/git/.ssh
   ssh-keyscan github.com >> /home/git/.ssh/known_hosts
   chown -R git:git /home/git/.ssh/known_hosts
 fi
