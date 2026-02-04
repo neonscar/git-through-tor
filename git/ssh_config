@@ -1,0 +1,4 @@
+Host github.com
+    ProxyCommand nc -x tor:9050 %h %p
+    StrictHostKeyChecking accept-new
+    UserKnownHostsFile /root/.ssh/known_hosts

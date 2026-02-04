@@ -1,0 +1,27 @@
+services:
+  tor:
+    build: ./tor
+    container_name: tor-socks
+    networks:
+      - tor-net
+    expose:
+      - "9050"
+    restart: unless-stopped
+
+  git:
+    build: ./git
+    container_name: git-tor
+    depends_on:
+      - tor
+    networks:
+      - tor-net
+    volumes:
+      - ./repositories:/data
+      - ./ssh:/ssh:ro
+      - ./gitconfig:/home/git/.gitconfig
+    tty: true
+    stdin_open: true
+
+networks:
+  tor-net:
+    driver: bridge

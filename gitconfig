@@ -1,0 +1,18 @@
+[user]
+    name = username
+    email = your@email.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = vim
+
+[pull]
+    rebase = false
+
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
