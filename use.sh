@@ -51,7 +51,7 @@ case "$1" in
   status)
     docker compose ps
     ;;
-  test-tor)
+  test-tor|tor-test)
     ensure_running
     echo "[*] Testing Tor connectivity..."
     docker exec "$GIT_CONTAINER" sh -c '
@@ -60,6 +60,7 @@ case "$1" in
       curl --silent --socks5-hostname tor:9050 https://check.torproject.org/api/ip \
         | sed "s/,/,\n/g"
     '
+    echo ""
     ;;
   *)
     usage
